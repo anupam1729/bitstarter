@@ -2,15 +2,16 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-app.get('/', function(request, response) {
-  
-var fs = require('fs');
-fs.readFile('index.html', function (err, data) {
-  if (err) throw err;
-  //console.log(data);
-  response.send(data);
+app.get('/', function (request, response) {
 
-});
+    var fs = require('fs');
+    fs.readFile('index.html', function (err, data) {
+        if (err) throw err;
+        //console.log(data);
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.send(data);
+
+    });
 
 
 });
