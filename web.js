@@ -8,8 +8,8 @@ app.get('/', function (request, response) {
     fs.readFile('index.html', function (err, data) {
         if (err) throw err;
         //console.log(data);
-        response.writeHead(200, { "Content-Type": "text/html" });
-        response.send(data);
+        //response.writeHead(200, { "Content-Type": "text/html" });
+        response.send(data.toString());
 
     });
 
