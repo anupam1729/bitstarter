@@ -7,13 +7,16 @@ app.get('/', function (request, response) {
     var fs = require('fs');
     fs.readFile('index.html', function (err, data) {
         if (err) throw err;
-        //console.log(data);
-        //response.writeHead(200, { "Content-Type": "text/html" });
         response.send(data.toString());
 
     });
 
 
+});
+
+app.get('/Quote', function (request, response) {
+
+    response.send('work in progress');
 });
 
 var port = process.env.PORT || 5000;
