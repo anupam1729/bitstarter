@@ -23,9 +23,9 @@ async.forEach(symbolsArray,
     },
      function () {
          //var jsonString = JSON.stringify(foo);
-         //console.log("..." + finalCSVString);
-         fs.writeFile("test.csv", finalCSVString);
-         console.log("took " + moment().diff(timeNow));
+         console.log("..." + finalCSVString);
+         //fs.writeFile("test.csv", finalCSVString);
+         //console.log("took " + moment().diff(timeNow));
      }
 );
 

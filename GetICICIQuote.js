@@ -7,7 +7,7 @@ module.exports.returnQuoteJSON = function (symbol, cb) {
     var url = "http://getquote.icicidirect.com/NewSiteTrading/trading/equity/includes/trading_stock_quote.asp?Symbol=" + symbol;
     jsdom.env(url, function (Err, window) {
         console.log(symbol);
-        console.log(moment());
+        //console.log(moment());
         var projectionNode = window.document.getElementsByClassName('projection')[1];
         var lastTradePrice_NSE = projectionNode.getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerHTML.replace(/,/g, "");
         var lastTradeDate_NSE = projectionNode.getElementsByTagName('tr')[1].getElementsByTagName('td')[4].innerHTML.replace(/,/g, "");
@@ -43,7 +43,7 @@ module.exports.returnQuoteJSON = function (symbol, cb) {
 
         window.close();
         cb(foo);
-        console.log(moment());
+        //console.log(moment());
 
     })
 
